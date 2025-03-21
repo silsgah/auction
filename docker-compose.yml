@@ -9,5 +9,25 @@ services:
       POSTGRES_DB: auction
     volumes:
       - pgdata:/var/lib/postgresql/data
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=mongpwd
+    ports:
+     - 27018:27018
+    volumes:
+     - mongodata:/var/lib/mongodb/data
+  
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports: 
+      - 5672:5672
+      - 15672:15672
+      
+
+
+
 volumes:
   pgdata:
+  mongodata:
