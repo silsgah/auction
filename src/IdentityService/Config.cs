@@ -41,9 +41,7 @@ public static class Config
                 AllowedGrantTypes= GrantTypes.CodeAndClientCredentials,
                 RequirePkce = false,
                 AllowOfflineAccess=true,
-                AllowedScopes = {"openid","profile","auctionApp"}
-
-               
+                AccessTokenLifetime = 3600*24*30
             },
 
         };

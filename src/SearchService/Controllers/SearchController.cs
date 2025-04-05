@@ -11,6 +11,7 @@ public class SearchController: ControllerBase
  [HttpGet]
  public async Task<ActionResult<List<Item>>> SearchItem([FromQuery] SearchParams searchParams)
  {
+    Console.WriteLine("Search endpoint hit with term: " + searchParams.SearchItem);
     var query = DB.PagedSearch<Item, Item>();
 
     if(!string.IsNullOrEmpty(searchParams.SearchItem))
